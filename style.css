@@ -4,6 +4,10 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 .header {
     display: flex;
 }
@@ -121,6 +125,7 @@
     z-index: 1000;
     /* Make sure it sits above */
     padding: 3px;
+    border-radius: 10px;
 }
 
 .nav-links2 ul li .dropdown {
@@ -182,7 +187,7 @@
 .section-1 {
     background-image: url(/assets/sec1.png);
     position: relative;
-    height: 80%;
+    height: 80vh;
     background-size: 100%;
 }
 
@@ -217,9 +222,10 @@ button {
 }
 
 .subinfo-1 {
-    background-color: #1C4884;
+    background-color: #1c4884;
     width: 8vw;
     padding: 15px;
+    height: 6vw;
     color: white;
 }
 
@@ -227,5 +233,266 @@ button {
     background-color: #a70000;
     width: 8vw;
     padding: 15px;
+    height: 6vw;
     color: white;
+}
+
+.subinfo-3 {
+    width: 16vw;
+    height: 16vw;
+    color: #1c4884;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1vw;
+}
+
+.section-2 {
+    margin: 4vh 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1c4884;
+    text-align: left;
+    padding: 2vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sec-image img {
+    image-resolution: 100%;
+}
+
+.section-3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-eff {
+    position: relative;
+    width: 40%;
+    height: 60vh;
+    overflow: hidden;
+    color: white;
+    padding: 3vh;
+    box-sizing: border-box;
+    background-image: url(./assets/noeff.png);
+    background-size: cover;
+}
+
+.section {
+    position: relative;
+    width: 20%;
+    height: 60vh;
+    overflow: hidden;
+    color: white;
+    padding: 3vh;
+    box-sizing: border-box;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: filter 0.3s ease;
+}
+
+.section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c4884;
+    /* Overlay color */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.section:hover::before {
+    filter: blur(4px);
+}
+
+.section:hover::after {
+    opacity: 0.7;
+}
+
+.section h2,
+.section p,
+.section a {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Hide content initially */
+
+.section h2,
+.section p,
+.section a {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Reveal on hover */
+
+.section:hover h2,
+.section:hover p,
+.section:hover a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section a button {
+    margin-top: 10px;
+    border: none;
+    background: #a70000;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+/* Add background images per section */
+
+#section2::before {
+    background-image: url('./assets/sec1.png');
+}
+
+#section3::before {
+    background-image: url('./assets/sec1.png');
+}
+
+#section4::before {
+    background-image: url('./assets/sec1.png');
+}
+
+
+/* end */
+
+.sec-title {
+    margin: 5vh 5vw;
+    text-align: center;
+}
+
+.sec-title h1 {
+    color: #1c4884;
+}
+
+.sec-title p {
+    color: #a70000;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+.row1,
+.row2 {
+    display: flex;
+    gap: 3vw;
+    justify-content: center;
+}
+
+.hover-card {
+    position: relative;
+    width: 15vw;
+    height: 30vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hover-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    display: block;
+}
+
+
+/* Overlay layer */
+
+.hover-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(28, 72, 132, 0.7);
+    /* red overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+
+/* Text to show on hover */
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(10px);
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Hover effects */
+
+.hover-card:hover img {
+    filter: blur(4px);
+}
+
+.hover-card:hover::after {
+    opacity: 1;
+}
+
+.hover-card:hover .overlay-text {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+.section-5 {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    background-image: url(./assets/sec-5.png);
+    margin-top: 10vh;
+    background-size: cover;
+}
+
+
+/* footer */
+
+.footer {
+    display: flex;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-left {
+    width: 30%;
+    background-color: #a70000;
+}
+
+.footer-right {
+    width: 70%;
+    background-color: #1c4884;
 }
