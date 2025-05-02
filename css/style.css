@@ -1,7 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 
 .logo {
@@ -14,6 +16,12 @@
 
 .navbar {
     flex-direction: column;
+}
+
+.nav-links1 {
+    display: inline;
+    justify-items: center;
+    align-items: center;
 }
 
 .nav-links1 a {
@@ -44,6 +52,10 @@
     justify-content: center;
 }
 
+.brand-name img {
+    height: 3vh;
+}
+
 .brand-name a {
     text-decoration: none;
     color: #a70000;
@@ -56,6 +68,7 @@
 .nav-links2 a {
     text-decoration: none;
     color: black;
+    font-weight: 600;
 }
 
 .nav-links2 ul li {
@@ -175,6 +188,7 @@
     }
     .brand-name {
         padding-bottom: 30px;
+        align-items: center;
     }
     hr {
         display: none;
@@ -200,7 +214,13 @@
     text-align: left;
 }
 
-.info h1,
+.info h1 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+}
+
 .info p {
     color: #fff;
 }
@@ -218,31 +238,32 @@ button {
 
 .subinfo {
     display: flex;
-    padding-left: 35vw;
 }
 
 .subinfo-1 {
     background-color: #1c4884;
-    width: 8vw;
-    padding: 15px;
+    width: 50%;
     height: 6vw;
     color: white;
+    padding: 2vh 4vw;
+}
+
+.subinfo-1 h1 {
+    font-weight: 700;
+    padding-top: 2vh;
 }
 
 .subinfo-2 {
     background-color: #a70000;
-    width: 8vw;
-    padding: 15px;
+    width: 50%;
     height: 6vw;
     color: white;
+    padding: 2vh 4vw;
 }
 
-.subinfo-3 {
-    width: 16vw;
-    height: 16vw;
-    color: #1c4884;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 1vw;
+.subinfo-2 h1 {
+    font-weight: 700;
+    padding-top: 2vh;
 }
 
 .section-2 {
@@ -385,6 +406,7 @@ button {
 }
 
 .sec-title h1 {
+    font-weight: 600;
     color: #1c4884;
 }
 
@@ -392,23 +414,29 @@ button {
     color: #a70000;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 3vw;
+.grid-layout {
+    display: grid;
+    grid-template-areas: "large small1 small2" "large small3 small4";
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2vw;
+    margin: 0 20vw;
 }
 
-.row1,
-.row2 {
-    display: flex;
-    gap: 3vw;
-    justify-content: center;
+.grid-item.large {
+    grid-area: large;
+    height: 90vh;
+    width: 27vw;
+}
+
+.grid-item.small {
+    height: 43vh;
+    width: 18vw;
 }
 
 .hover-card {
     position: relative;
-    width: 15vw;
-    height: 30vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     cursor: pointer;
 }
@@ -421,9 +449,6 @@ button {
     display: block;
 }
 
-
-/* Overlay layer */
-
 .hover-card::after {
     content: '';
     position: absolute;
@@ -431,30 +456,29 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(28, 72, 132, 0.7);
-    /* red overlay */
+    background-color: rgb(167, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
 }
 
-
-/* Text to show on hover */
-
 .overlay-text {
+    padding: 3vh 0;
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(10px);
     color: white;
-    font-size: 18px;
+    font-size: 1.5vh;
     opacity: 0;
     z-index: 2;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-
-/* Hover effects */
+.overlay-text h3 {
+    font-weight: 600;
+}
 
 .hover-card:hover img {
     filter: blur(4px);

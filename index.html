@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KSGT</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -39,7 +45,7 @@
             <nav class="nav-2">
                 <div class="brand-name">
                     <a href="index.html">
-                        <h1>KRISH</h1>
+                        <img src="/assets/brand-name.png" alt="">
                     </a>
                 </div>
                 <div class="nav-links2">
@@ -57,27 +63,9 @@
                         </li>
                         <li>
                             <a href="#">Services</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="electromech.html">KSGT ELECTROMECH</a>
-                                </li>
-                                <li>
-                                    <a href="elorbit.html">ELORBIT INDUSTRIES</a>
-                                </li>
-                                <li>
-                                    <a href="technolab.html">KRISH TECHNOLAB</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="#">Gallery</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Training</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Testimonials</a>
                         </li>
                         <li>
                             <a href="contact.html">Contact</a>
@@ -99,18 +87,15 @@
     </div>
     <div class="subinfo">
         <div class="subinfo-1">
-            <h1>200+</h1>
+            <h1 class="count" data-target="500">0</h1>
             <p>Completed Projects</p>
         </div>
         <div class="subinfo-2">
-            <h1>25+</h1>
+            <h1 class="count" data-target="20">0</h1>
             <p>Years of Experience</p>
         </div>
-        <div class="subinfo-3">
-            <h3>We Construct and Manage Places and Infrastructures </h3>
-
-        </div>
     </div>
+
 
     <div class="section-2">
         <div class="sec-title">
@@ -150,32 +135,55 @@
             <h1>Our Special Projects</h1>
         </div>
         <div class="content">
-            <div class="row1">
-                <div class="hover-card">
-                    <a href="#"><img src="/assets/sec2.png" alt=""></a>
-                    <div class="overlay-text">INFO 1</div>
+            <div class="grid-layout">
+                <div class="grid-item large">
+                    <div class="hover-card">
+                        <a href="#"><img src="/assets/office-buildings-modern-glass-silhouettes-on-moder-PRADEQE (1).svg" alt=""></a>
+                        <div class="overlay-text">
+                            <h3>Indian Navy (INS VIRAT, INS TRISHUL, INS TALWAR, etc.)</h3><br> One of India’s most prestigious government clients.
+                            <h3><br>Work Done:</h3>
+                            <br> Engineering services for compressor refrigeration plants across multiple naval ships including INS VIRAT, INS TRISHUL, INS TALWAR, INS SIDHUVIJAY, INS JALASHWA, etc. Involved design, panel supply, electrical work, and
+                            commissioning.
+                        </div>
+                    </div>
                 </div>
-                <div class="hover-card">
-                    <a href="#"><img src="/assets/sec1.png" alt=""></a>
-                    <div class="overlay-text">INFO 2</div>
+                <div class="grid-item small">
+                    <div class="hover-card">
+                        <a href="#"><img src="/assets/office-building-P6EY7D6 (1).svg" alt=""></a>
+                        <div class="overlay-text">
+                            <h3>GAIL India Ltd. (Gwalior, Pata, Kanpur)</h3> One of India's largest natural gas processing and distribution companies.
+                            <h3><br>Work Done:</h3> Burner Management System using Telemechanique system and FBD development using Siemens platform. Commissioning of refrigeration and compressor systems across multiple locations.
+                        </div>
+                    </div>
                 </div>
-                <div class="hover-card">
-                    <a href="#"><img src="/assets/sec2.png" alt=""></a>
-                    <div class="overlay-text">INFO 3</div>
+                <div class="grid-item small">
+                    <div class="hover-card">
+                        <a href="#"><img src="/assets/round-building-CGY4TZ5 (1).svg" alt=""></a>
+                        <div class="overlay-text">
+                            <h3>LG Electronics, Ranjangaon, Maharashtra</h3><br> Globally renowned electronics and home appliances manufacturer.
+                            <h3><br>Work Done:</h3>
+                            <br> AC Blower Test JIG System: Drive commissioning, electrical design, software development, and full system commissioning of the control setup.</div>
+                    </div>
                 </div>
-            </div>
-            <div class="row2">
-                <div class="hover-card">
-                    <a href="#"><img src="/assets/sec1.png" alt=""></a>
-                    <div class="overlay-text">INFO 4</div>
+                <div class="grid-item small">
+                    <div class="hover-card">
+                        <a href="#"><img src="/assets/scott-webb-kAJE-3_4zHE-unsplash (1).svg" alt=""></a>
+                        <div class="overlay-text">
+                            <h3>Whirlpool India Ltd.</h3> Maharashtra A global leader in home appliances.
+                            <h3><br>Work Done:</h3> Engineering services provided for the Refrigeration Quality Unit based on AB system platforms.
+                        </div>
+                    </div>
                 </div>
-                <div class="hover-card">
-                    <a href="#"><img src="/assets/sec2.png" alt=""></a>
-                    <div class="overlay-text">INFO 5</div>
-                </div>
-                <div class="hover-card">
-                    <a href="#"><img src="/assets/sec1.png" alt=""></a>
-                    <div class="overlay-text">INFO 5</div>
+                <div class="grid-item small">
+                    <div class="hover-card">
+                        <a href="#"><img src="/assets/xrdes-PHgbWpst8UA-unsplash (1).svg" alt=""></a>
+                        <div class="overlay-text">
+                            <h3>Honeywell India Pvt. Ltd.</h3> A Fortune 100 global tech company in automation and control.
+                            <h3><br>Work Done:</h3>
+                            Software development using ABB AC1131 programming software. Entire system setup consisted of ABB PLC hardware.
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,7 +211,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, amet quaerat eaque rem reiciendis corrupti ipsam nostrum architecto temporibus, repellat saepe illo hic libero aspernatur ad, tempora obcaecati fugit sint?</p>
         </div>
         <div class="footer-right">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem atque deserunt quod perspiciatis in nihil voluptatibus, doloribus nobis vitae esse? Voluptas, est. Saepe quibusdam explicabo, reprehenderit quaerat ipsum voluptas similique.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem atque deserunt quod perspiciatis in nihil voluptatibus, doloribus nobis vitae esse? Voluptas, est. Saepe quibusdam explicabo, reprehenderit quaerat ipsum voluptas similique.
+            </p>
         </div>
     </div>
 
