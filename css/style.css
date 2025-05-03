@@ -132,7 +132,7 @@
     .hamburger {
         display: flex;
         position: fixed;
-        margin-right: 10vw;
+        margin-right: 35vw;
     }
     .navbar {
         position: fixed;
@@ -165,8 +165,7 @@
         height: auto;
     }
     .brand-name {
-        padding-bottom: 30px;
-        align-items: center;
+        display: none;
     }
     hr {
         display: none;
