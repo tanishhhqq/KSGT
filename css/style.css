@@ -54,7 +54,7 @@ body {
 }
 
 .brand-name {
-    padding-right: 50vh;
+    padding-right: 10vh;
     justify-content: center;
 }
 
@@ -134,10 +134,13 @@ body {
 
 /* Responsive */
 
-@media (max-width: 1000px) {
+@media (max-width: 786px) {
     .hamburger {
         display: flex;
         position: fixed;
+    }
+    .nav-2 {
+        width: 70vw;
     }
     .navbar {
         position: fixed;
