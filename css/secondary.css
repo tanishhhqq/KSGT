@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Encode Sans Expanded", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.contact-1 {
+    background-image: url(/assets/contact.svg);
+    position: relative;
+    height: 30vh;
+    /* Full viewport height */
+    width: 100%;
+    background-size: cover;
+    /* Scales image to cover container */
+    background-position: center;
+    /* Centers image */
+    background-repeat: no-repeat;
+    justify-items: center;
+    align-content: center;
+}
+
+.contact-1 p {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    /* Scales font size responsively */
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    font-size: 16px;
+}
+
+.form-half {
+    width: 48%;
+}
+
+.form-full {
+    width: 100%;
+}
+
+.contact-form button {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #a30000;
+}
+
+@media (max-width: 600px) {
+    .form-half {
+        width: 100%;
+    }
+}
