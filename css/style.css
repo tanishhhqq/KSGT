@@ -145,16 +145,17 @@
     display: none;
 }
 
-.nav-links2 ul li:hover .dropdown {
+.nav-links2 ul li:active .dropdown {
     display: flex;
 }
 
 
 /* Responsive */
 
-@media (max-width: 1440px) {
+@media (max-width: 1000px) {
     .hamburger {
         display: flex;
+        position: fixed;
     }
     .navbar {
         position: fixed;
@@ -201,8 +202,14 @@
 .section-1 {
     background-image: url(/assets/sec1.png);
     position: relative;
-    height: 80vh;
-    background-size: 100%;
+    height: 100%;
+    /* Full viewport height */
+    width: 100%;
+    background-size: cover;
+    /* Scales image to cover container */
+    background-position: center;
+    /* Centers image */
+    background-repeat: no-repeat;
 }
 
 .info {
@@ -210,8 +217,12 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    padding-left: 20vw;
+    padding-left: 10%;
+    /* More flexible than fixed 20vw */
     text-align: left;
+    box-sizing: border-box;
+    /* Prevents padding from causing overflow */
+    font-weight: 300;
 }
 
 .info h1 {
@@ -219,46 +230,155 @@
     font-weight: 700;
     font-style: normal;
     color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    /* Scales font size responsively */
 }
 
 .info p {
     color: #fff;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    /* Responsive paragraph text */
+    max-width: 80%;
+    /* Prevents text from stretching too wide */
 }
 
 button {
-    width: 7vw;
-    height: 4vh;
+    width: clamp(100px, 15vw, 150px);
+    /* Flexible width */
+    height: clamp(40px, 6vh, 50px);
+    /* Flexible height */
     border: none;
     color: #ffffff;
     background-color: #a70000;
-    padding: 2px;
-    border-radius: 2px;
+    padding: 0.5rem;
+    border-radius: 4px;
+    /* Slightly larger for better appearance */
     cursor: pointer;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    /* Responsive button text */
+    transition: transform 0.2s;
+    /* Smooth scaling on hover */
+}
+
+button:hover {
+    transform: scale(1.05);
+    /* Subtle hover effect */
 }
 
 .subinfo {
     display: flex;
+    flex-wrap: wrap;
+    /* Allows items to wrap on smaller screens */
 }
 
 .subinfo-1 {
     background-color: #1c4884;
     width: 50%;
-    height: 6vw;
+    min-height: 100px;
     color: white;
-    padding: 2vh 4vw;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .subinfo-1 h1 {
     font-weight: 700;
-    padding-top: 2vh;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    /* Responsive heading */
+    padding-top: 1rem;
+}
+
+
+/* Media Queries for Smaller Screens */
+
+@media (max-width: 768px) {
+    .section-1 {
+        justify-items: center;
+        align-content: center;
+    }
+    .info {
+        padding-left: 5%;
+        /* Reduce padding on smaller screens */
+        justify-content: flex-start;
+        /* Align content at top for scrolling */
+        padding-top: 2rem;
+        /* Add top padding for better spacing */
+    }
+    .info h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        /* Slightly smaller for mobile */
+    }
+    .info p {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        max-width: 90%;
+        /* More width for readability */
+        font-weight: 300;
+    }
+    button {
+        width: clamp(120px, 30vw, 200px);
+        /* Larger button for touch targets */
+        height: clamp(45px, 8vh, 55px);
+    }
+    .subinfo {
+        display: none;
+    }
+    .subinfo-1 {
+        width: 100%;
+        /* Full width on mobile */
+        padding: 1.5rem;
+    }
+    .subinfo-1 h1 {
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+    }
+    .subinfo-2 {
+        width: 100%;
+        /* Full width on mobile */
+        padding: 1.5rem;
+    }
+    .subinfo-2 h1 {
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+    }
+}
+
+.subinfo-2 h1 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+}
+
+@media (max-width: 480px) {
+    .info {
+        padding-left: 3%;
+        padding-top: 1.5rem;
+    }
+    .info h1 {
+        font-size: clamp(1.2rem, 7vw, 2rem);
+    }
+    .info p {
+        font-size: clamp(0.8rem, 4vw, 1rem);
+    }
+    button {
+        width: clamp(100px, 40vw, 180px);
+        height: clamp(40px, 10vh, 50px);
+        font-size: clamp(0.8rem, 3vw, 0.9rem);
+    }
+    .subinfo-1 {
+        padding: 1rem;
+    }
+    .subinfo-2 {
+        background-color: #a70000;
+        width: 100%;
+        min-height: 100px;
+        color: white;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
 }
 
 .subinfo-2 {
     background-color: #a70000;
     width: 50%;
-    height: 6vw;
+    min-height: 100px;
     color: white;
-    padding: 2vh 4vw;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .subinfo-2 h1 {
@@ -280,6 +400,21 @@ button {
 
 .sec-image img {
     image-resolution: 100%;
+}
+
+.partners {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2vh;
+    font-weight: 600;
+}
+
+.partners-img {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
 }
 
 .section-3 {
@@ -322,7 +457,9 @@ button {
     transition: filter 0.3s ease;
 }
 
-.section::after {
+#section2::after {
+    align-items: center;
+    justify-content: center;
     content: '';
     position: absolute;
     top: 0;
@@ -331,6 +468,36 @@ button {
     height: 100%;
     background-color: #1c4884;
     /* Overlay color */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+#section3::after {
+    align-items: center;
+    justify-content: center;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    /* Overlay color */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+#section4::after {
+    align-items: center;
+    justify-content: center;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -349,6 +516,7 @@ button {
 .section a {
     position: relative;
     z-index: 2;
+    text-align: left;
 }
 
 
@@ -365,21 +533,33 @@ button {
 
 /* Reveal on hover */
 
-.section:hover h2,
-.section:hover p,
-.section:hover a {
+#section2:hover h2,
+#section2:hover p,
+#section2:hover a {
     opacity: 1;
     transform: translateY(0);
 }
 
-.section a button {
-    margin-top: 10px;
-    border: none;
-    background: #a70000;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
+#section3:hover h2,
+#section3:hover p,
+#section3:hover a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#section4:hover h2,
+#section4:hover p,
+#section4:hover a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section a .BTN {
     cursor: pointer;
-    border-radius: 4px;
+    color: #ffffff;
+    margin: 20vh 15vw;
+    height: 6vh;
+    width: 5vh;
 }
 
 
@@ -395,6 +575,19 @@ button {
 
 #section4::before {
     background-image: url('/assets/sec1.png');
+}
+
+@media (max-width:786px) {
+    .section-3 {
+        flex-direction: column;
+        width: 100%;
+    }
+    .no-eff {
+        display: none;
+    }
+    #section2 {
+        background-size: 100% 100%;
+    }
 }
 
 
