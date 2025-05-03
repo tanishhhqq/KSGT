@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KSGT</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/secondary.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
@@ -75,24 +75,31 @@
             </nav>
         </div>
     </div>
+    <!-- navbar ends -->
+
+    <div class="contact-1">
+        <div class="contact-text">
+            <p>Contact Us</p>
+        </div>
+    </div>
+    <br> <br>
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="5286ef6e-7c6e-44d3-9528-5ef6298d9fb6">
+
+        <input type="text" name="name" class="form-half" placeholder="Your Full Name" required>
+        <input type="email" name="email" class="form-half" placeholder="Your Email Address" required>
+        <input type="tel" name="phone" class="form-half" placeholder="Your Phone Number" required>
+        <input type="text" name="address" class="form-half" placeholder="Your Address" required>
+
+        <textarea name="message" class="form-full" rows="5" placeholder="Enter Your Message Here..." required></textarea>
+
+        <button type="submit">Submit→</button>
+    </form>
+
+    <br>
+    <br>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- footer -->
     <footer class="fixed-footer">
         <div class="footer-left">
             <div class="footer-logo">
@@ -142,6 +149,5 @@
         </div>
     </footer>
 
-
-    <script src="index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
