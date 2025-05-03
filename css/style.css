@@ -467,7 +467,7 @@ button:hover {
 }
 
 #section2:hover::after {
-    background-color: hsl(0, 100%, 33%, );
+    background-color: hsl(0, 100%, 33%, 0.8);
     /* 70% opacity blue overlay */
     opacity: 1;
 }
