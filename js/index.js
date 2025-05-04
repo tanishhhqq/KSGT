@@ -26,3 +26,36 @@ counters.forEach(counter => {
 
     updateCount();
 });
+
+let slideIndex = 0;
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot");
+
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("active");
+    setTimeout(showSlides, 5000); // Change slide every 5 seconds
+}
+
+function currentSlide(n) {
+    slideIndex = n;
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("active");
+}
+
+// Initialize the slideshow
+slides[0].classList.add("active");
+dots[0].classList.add("active");
+setTimeout(showSlides, 5000);

@@ -14,6 +14,18 @@ body {
 
 .logo {
     cursor: pointer;
+    justify-content: center;
+    align-content: center;
+    padding: 0 2vw;
+}
+
+@media (width:800px) {
+    .logo {
+        cursor: pointer;
+        justify-content: center;
+        align-content: center;
+        padding: 0 2vw;
+    }
 }
 
 .header {
@@ -138,6 +150,7 @@ body {
     .hamburger {
         display: flex;
         position: fixed;
+        justify-content: center;
     }
     .nav-2 {
         width: 70vw;
@@ -763,6 +776,98 @@ button:hover {
     }
     .ceo-text {
         width: 90vw;
+    }
+}
+
+.testimonials {
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    color: #1a2a44;
+    margin-bottom: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.slideshow-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slide {
+    display: none;
+    background: #ffffff;
+    padding: 20px;
+    max-width: 60vw;
+    text-align: left;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide img {
+    width: 15vw;
+    height: auto;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.quote {
+    font-size: 7em;
+    color: #1a2a44;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.text {
+    font-size: 1em;
+    color: #1C4884;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.author {
+    font-size: 0.9em;
+    color: #1C4884;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.position {
+    font-size: 0.9em;
+    color: #a70000;
+    font-family: Arial, sans-serif;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #1a2a44;
+}
+
+@media screen and (max-width: 786px) {
+    .slide img {
+        display: none;
     }
 }
 
