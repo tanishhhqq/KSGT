@@ -75,3 +75,122 @@
         width: 100%;
     }
 }
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.tab.active {
+    border-bottom: 3px solid #a70000;
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.about-tabs {
+    display: flex;
+    background-color: #ffff;
+    justify-content: center;
+    width: 100%;
+}
+
+.about-tab {
+    display: flex;
+    padding: 2vh;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#about-services-tab {
+    background-color: #1C4884;
+}
+
+#about-portfolio-tab {
+    background-color: #8B0000;
+}
+
+.about-tab:hover {
+    opacity: 0.9;
+}
+
+.about-tab.active {
+    opacity: 1;
+}
+
+.about-content {
+    display: none;
+}
+
+.about-content.active {
+    display: block;
+}
+
+.about-hero-section {
+    background-image: url(/assets/contact.svg);
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-quote {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.about-hero-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 600;
+}
+
+.about-hero-section p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.about-cta-btn {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    text-align: center;
+    gap: 8px;
+}
+
+.about-cta-btn:hover {
+    background-color: #a30000;
+}

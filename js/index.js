@@ -59,3 +59,25 @@ function currentSlide(n) {
 slides[0].classList.add("active");
 dots[0].classList.add("active");
 setTimeout(showSlides, 5000);
+
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Deactivate all tabs
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // Show the selected section
+    const activeSection = document.getElementById(sectionId);
+    activeSection.classList.add('active');
+
+    // Activate the selected tab
+    const activeTab = Array.from(tabs).find(tab => tab.getAttribute('onclick') === `showSection('${sectionId}')`);
+    activeTab.classList.add('active');
+}
