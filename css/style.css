@@ -19,6 +19,10 @@ body {
     padding: 0 2vw;
 }
 
+.logo img {
+    height: 12vh;
+}
+
 @media (width:800px) {
     .logo {
         cursor: pointer;
@@ -30,7 +34,7 @@ body {
 
 .header {
     display: flex;
-    gap: 10em;
+    gap: 7em;
 }
 
 .navbar {

@@ -84,10 +84,20 @@
     display: block;
 }
 
+.tabs {
+    display: flex;
+    justify-content: center;
+}
+
+.tab:hover {
+    color: #1C4884;
+}
+
 .tab.active {
     border-bottom: 3px solid #a70000;
     font-weight: bold;
     background-color: #f0f0f0;
+    color: #a70000;
 }
 
 .about-tabs {
