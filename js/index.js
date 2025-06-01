@@ -81,3 +81,25 @@ function showSection(sectionId) {
     const activeTab = Array.from(tabs).find(tab => tab.getAttribute('onclick') === `showSection('${sectionId}')`);
     activeTab.classList.add('active');
 }
+const images = document.querySelectorAll('.section-1 img');
+let current = 0;
+
+function showSlide(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+            img.classList.add('active');
+        }
+    });
+}
+
+function nextSlide() {
+    current = (current + 1) % images.length;
+    showSlide(current);
+}
+
+// Initial display
+showSlide(current);
+
+// Change slide every 3 seconds
+setInterval(nextSlide, 3000);

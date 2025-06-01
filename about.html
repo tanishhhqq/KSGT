@@ -18,7 +18,7 @@
     <!-- NAVBAR -->
     <div class="header">
         <div class="logo" type="button">
-            <a href="index.html"><img src="./assets/logo.png" alt=""></a>
+            <a href="index.html"><img src="./assets/logomain.png" alt=""></a>
         </div>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span class="bar"></span>
@@ -27,7 +27,7 @@
         </div>
         <div class="navbar">
             <nav class="nav-1">
-                <div class="nav-links1">
+                <div class="nav-links1" style="display: flex; justify-content: space-between;">
                     <ul>
                         <li>
                             <a href="electromech.html">KSGT ELECTROMECH</a>
@@ -38,6 +38,22 @@
                         <li>
                             <a href="technolab.html">KRISH TECHNOLAB</a>
                         </li>
+                    </ul>
+                    <ul>
+                        <div class="social-nav">
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
                     </ul>
                 </div>
             </nav>
@@ -57,10 +73,10 @@
                             <a href="about.html">About</a>
                         </li>
                         <li>
-                            <a href="#">Services</a>
+                            <a href="services.html">Services</a>
                         </li>
                         <li>
-                            <a href="#">Gallery</a>
+                            <a href="gallery.html">Gallery</a>
                         </li>
                         <li>
                             <a href="contact.html">Contact</a>
@@ -72,26 +88,10 @@
     </div>
     <!-- navbar ends -->
 
-    <div class="contact-1">
-        <div class="contact-text">
-            <p>Contact Us</p>
-        </div>
-    </div>
-    <br> <br>
-    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="5286ef6e-7c6e-44d3-9528-5ef6298d9fb6">
 
-        <input type="text" name="name" class="form-half" placeholder="Your Full Name" required>
-        <input type="email" name="email" class="form-half" placeholder="Your Email Address" required>
-        <input type="tel" name="phone" class="form-half" placeholder="Your Phone Number" required>
-        <input type="text" name="address" class="form-half" placeholder="Your Address" required>
-
-        <textarea name="message" class="form-full" rows="5" placeholder="Enter Your Message Here..." required></textarea>
-
-        <button type="submit">Submit→</button>
-    </form>
 
     <br>
+
     <br>
 
     <div class="about-tabs">
