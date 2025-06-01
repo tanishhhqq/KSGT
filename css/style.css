@@ -206,8 +206,10 @@ body {
     width: 100%;
     height: 90vh;
     overflow: hidden;
-    margin: 0 auto; /* Center the section */
-    max-width: 1920px; /* Maximum width for very large screens */
+    margin: 0 auto;
+    /* Center the section */
+    max-width: 1920px;
+    /* Maximum width for very large screens */
 }
 
 .section-1 img {
@@ -291,12 +293,29 @@ button:hover {
     padding-top: 1rem;
 }
 
+.subinfo-2 {
+    background-color: #a70000;
+    width: 50%;
+    min-height: 100px;
+    color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.subinfo-2 h1 {
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    /* Responsive heading */
+    padding-top: 1rem;
+}
+
 
 /* Media Queries for Smaller Screens */
 
 @media (max-width: 1200px) {
     .section-1 {
-        width: 95%; /* Slightly reduced width for better margins */
+        width: 95%;
+        /* Slightly reduced width for better margins */
     }
 }
 
@@ -306,7 +325,6 @@ button:hover {
         height: 70vh;
         margin: 0 auto;
     }
-    
     .section-1 img {
         object-position: center;
         width: 100%;
@@ -401,13 +419,14 @@ button:hover {
     }
 }
 
+
 /* Landscape mode adjustments */
+
 @media (max-width: 768px) and (orientation: landscape) {
     .section-1 {
         width: 95%;
         height: 100vh;
     }
-    
     .section-1 img {
         object-fit: cover;
         width: 100%;
@@ -1175,20 +1194,23 @@ footer {
     }
 }
 
+
 /* Add landscape orientation support */
+
 @media (max-width: 768px) and (orientation: landscape) {
     .section-1 {
         width: 95%;
         height: 100vh;
     }
-    
     .section-1 img {
         object-fit: cover;
         width: 100%;
     }
 }
 
+
 /* Add responsive styles for very small devices */
+
 @media (max-width: 320px) {
     .section-1 {
         width: 80%;
