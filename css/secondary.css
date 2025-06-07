@@ -94,13 +94,34 @@
         width: auto;
     }
     
+    @media (max-width: 1200px) {
+        .service-content h2 {
+            font-size: 1em;
+        }
+        .service-content p {
+            font-size: 0.7em;
+        }
+    }
+    
+    @media (max-width: 868px) {
+        .service-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+        }
+    }
+    
     .tabs {
         display: flex;
         justify-content: center;
+        font-size: 0.8em;
     }
     
     .tab:hover {
         color: #1C4884;
+        font-weight: 800;
     }
     
     .tab.active {
@@ -380,6 +401,14 @@
         overflow: hidden;
     }
     
+    @media(max-width:768px) {
+        .service-image {
+            display: none;
+            /* overflow: hidden;
+            flex: 1; */
+        }
+    }
+    
     .service-image img {
         width: 100%;
         height: 100%;
@@ -400,11 +429,13 @@
     
     .service-content h2 {
         color: #ffffff;
-        font-size: 1.8rem;
+        font-size: 1rem;
         margin-bottom: 1rem;
+        font-weight: 800;
     }
     
     .service-content p {
+        font-size: 0.8rem;
         color: #ffffff;
         line-height: 1.6;
         margin-bottom: 1.5rem;
