@@ -957,14 +957,14 @@ footer {
 
 .box h3 {
     margin: 0 0 10px 0;
-    font-size: 14px;
+    font-size: 0.5rem;
     font-weight: bold;
     color: #333;
 }
 
 .box p {
     margin: 0;
-    font-size: 12px;
+    font-size: 0.5rem;
     color: #666;
     line-height: 1.5;
 }
@@ -993,6 +993,27 @@ footer {
     line-height: 20px;
     color: white;
     font-size: 12px;
+}
+
+@media (max-width: 620px) {
+    .box h3 {
+        margin: 0 0 10px 0;
+        font-size: 0.4rem;
+        font-weight: bold;
+        color: #333;
+    }
+    .box p {
+        margin: 0;
+        font-size: 0.4rem;
+        color: #666;
+        line-height: 1.5;
+    }
+    .email-image {
+        display: none;
+    }
+    .phone-image {
+        display: none;
+    }
 }
 
 .map-sec {
