@@ -202,14 +202,12 @@ body {
 /* navbar ends */
 
 .section-1 {
+    display: flex;
     position: relative;
     width: 100%;
     height: 90vh;
     overflow: hidden;
     margin: 0 auto;
-    /* Center the section */
-    max-width: 1920px;
-    /* Maximum width for very large screens */
 }
 
 .section-1 img {
@@ -220,6 +218,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
+    flex-shrink: 0;
     transition: opacity 1s ease-in-out;
 }
 
@@ -314,93 +313,48 @@ button:hover {
 
 @media (max-width: 1200px) {
     .section-1 {
-        width: 95%;
+        width: 100%;
+        height: 50vh;
         /* Slightly reduced width for better margins */
+    }
+    .section-1 img {
+        height: 50vh;
     }
 }
 
 @media (max-width: 768px) {
     .section-1 {
-        width: 90%;
-        height: 70vh;
-        margin: 0 auto;
+        width: 100%;
+        height: 50vh;
     }
     .section-1 img {
-        object-position: center;
         width: 100%;
+        height: 50vh;
+        object-fit: cover;
     }
     .section-1::before {
         font-size: clamp(1rem, 6vw, 2rem);
         top: clamp(0.5rem, 3vw, 1.5rem);
         left: clamp(0.5rem, 3vw, 1.5rem);
     }
-    .info {
-        padding-left: 5%;
-        /* Reduce padding on smaller screens */
-        justify-content: flex-start;
-        /* Align content at top for scrolling */
-        padding-top: 2rem;
-        /* Add top padding for better spacing */
-    }
-    .info h1 {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-        /* Slightly smaller for mobile */
-    }
-    .info p {
-        font-size: clamp(0.9rem, 3vw, 1.1rem);
-        max-width: 90%;
-        /* More width for readability */
-        font-weight: 300;
-    }
-    button {
-        width: clamp(120px, 30vw, 200px);
-        /* Larger button for touch targets */
-        height: clamp(45px, 8vh, 55px);
-    }
-    .subinfo {
-        display: none;
-    }
-    .subinfo-1 {
-        width: 100%;
-        /* Full width on mobile */
-        padding: 1.5rem;
-    }
-    .subinfo-1 h1 {
-        font-size: clamp(1.2rem, 4vw, 1.8rem);
-    }
-    .subinfo-2 {
-        width: 100%;
-        /* Full width on mobile */
-        padding: 1.5rem;
-    }
-    .subinfo-2 h1 {
-        font-size: clamp(1.2rem, 4vw, 1.8rem);
-    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 680px) {
     .section-1 {
-        width: 85%;
-        height: 60vh;
+        height: 30vh;
         margin: 0 auto;
     }
-    .info {
-        padding-left: 3%;
-        padding-top: 1.5rem;
-    }
-    .info h1 {
-        font-size: clamp(1.2rem, 7vw, 2rem);
-    }
-    .info p {
-        font-size: clamp(0.8rem, 4vw, 1rem);
-    }
-    button {
-        width: clamp(100px, 40vw, 180px);
-        height: clamp(40px, 10vh, 50px);
-        font-size: clamp(0.8rem, 3vw, 0.9rem);
+    .section-1 img {
+        height: 30vh;
     }
     .subinfo-1 {
         padding: 1rem;
+        background-color: #1C4884;
+        width: 100%;
+        min-height: 100px;
+        color: white;
+        padding: 1rem;
+        box-sizing: border-box;
     }
     .subinfo-2 {
         background-color: #a70000;
@@ -412,24 +366,13 @@ button:hover {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
     .section-1 {
-        width: 80%;
-        height: 50vh;
-    }
-}
-
-
-/* Landscape mode adjustments */
-
-@media (max-width: 768px) and (orientation: landscape) {
-    .section-1 {
-        width: 95%;
-        height: 100vh;
+        width: 100%;
+        height: 25vh;
     }
     .section-1 img {
-        object-fit: cover;
-        width: 100%;
+        height: 25vh;
     }
 }
 
@@ -495,6 +438,7 @@ button:hover {
 .section-3 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .no-eff {
@@ -531,6 +475,9 @@ button:hover {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
+    background-color: hsl(0, 100%, 33%, 0.8);
+    /* 70% opacity blue overlay */
+    opacity: 1;
 }
 
 #section2:hover::after {
@@ -551,6 +498,9 @@ button:hover {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
+    background-color: rgba(28, 72, 132, 0.7);
+    /* 70% opacity blue overlay */
+    opacity: 1;
 }
 
 #section3:hover::after {
@@ -569,6 +519,9 @@ button:hover {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
+    background-color: hsl(218, 100%, 18%, 0.7);
+    /* 70% opacity blue overlay */
+    opacity: 1;
 }
 
 #section4:hover::after {
@@ -1049,6 +1002,23 @@ footer {
     width: 100vw
 }
 
+@media (max-display:1200px) {
+    .map-sec {
+        height: 50vh;
+    }
+    .map img {
+        height: 50vh;
+    }
+    map {
+        height: 50vh;
+    }
+    map img {
+        height: 50vh;
+    }
+}
+
+@media (max-display:768px) {}
+
 .carousel-container {
     width: 100%;
     height: 80vh;
@@ -1176,29 +1146,5 @@ footer {
         font-size: 1.2rem;
         width: 40px;
         height: 40px;
-    }
-}
-
-
-/* Add landscape orientation support */
-
-@media (max-width: 768px) and (orientation: landscape) {
-    .section-1 {
-        width: 95%;
-        height: 100vh;
-    }
-    .section-1 img {
-        object-fit: cover;
-        width: 100%;
-    }
-}
-
-
-/* Add responsive styles for very small devices */
-
-@media (max-width: 320px) {
-    .section-1 {
-        width: 80%;
-        height: 50vh;
     }
 }
