@@ -1,0 +1,86 @@
+/* Gallery Carousel Styles */
+
+.gallery-container {
+    max-width: 50vw;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.gallery-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.gallery-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-card img {
+    height: 50vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.gallery-nav-button {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    z-index: 10;
+    /* Ensure buttons are above carousel */
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .gallery-slide {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-slide {
+        grid-template-columns: 1fr;
+    }
+    .gallery-card img {
+        height: 150px;
+    }
+    .gallery-nav-button {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
