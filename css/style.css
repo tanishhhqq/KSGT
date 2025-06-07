@@ -997,17 +997,22 @@ footer {
     font-size: 12px;
 }
 
+.map-sec {
+    object-fit: cover;
+}
+
 .map img {
     height: 80vh;
     width: 100vw
 }
 
-@media (max-display:1200px) {
+@media (max-width:1200px) {
     .map-sec {
         height: 50vh;
+        object-fit: cover;
     }
     .map img {
-        height: 50vh;
+        height: 50vw;
     }
     map {
         height: 50vh;
@@ -1017,7 +1022,35 @@ footer {
     }
 }
 
-@media (max-display:768px) {}
+@media (max-display:768px) {
+    .map-sec {
+        height: 40vh;
+    }
+    .map img {
+        height: 40vh;
+    }
+    map {
+        height: 40vh;
+    }
+    map img {
+        height: 40vh;
+    }
+}
+
+@media (max-display:480px) {
+    .map-sec {
+        height: 30vh;
+    }
+    .map img {
+        height: 30vh;
+    }
+    map {
+        height: 30vh;
+    }
+    map img {
+        height: 30vh;
+    }
+}
 
 .carousel-container {
     width: 100%;
