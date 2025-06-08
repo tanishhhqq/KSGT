@@ -484,9 +484,6 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    /* transition: opacity 0.3s ease; */
-    z-index: 1;
-    /* Behind text */
 }
 
 
@@ -494,7 +491,6 @@ button:hover {
 
 #section2::after {
     background-color: hsl(0, 100%, 33%, 0.8);
-    /* Red overlay */
 }
 
 #section3::after {
@@ -563,31 +559,36 @@ button:hover {
 
 #section2 h2,
 #section2 p,
-#section2:hover a {
+#section2 a {
     opacity: 1;
     transform: translateY(0);
 }
 
 #section3 h2,
 #section3 p,
-#section3:hover a {
+#section3 a {
     opacity: 1;
     transform: translateY(0);
 }
 
 #section4 h2,
 #section4 p,
-#section4:hover a {
+#section4 a {
     opacity: 1;
     transform: translateY(0);
 }
 
-.section a .BTN {
-    cursor: pointer;
-    color: #ffffff;
-    margin: 20vh 15vw;
+.sec3-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.sec3-btn a,
+.sec3-btn button {
+    text-decoration: none;
+    color: white;
     height: 6vh;
-    width: 5vh;
+    width: 3vw
 }
 
 
@@ -1016,13 +1017,22 @@ footer {
     }
 }
 
+.ourEnd {
+    object-fit: cover;
+}
+
+.ourEnd img {
+    height: 80vh;
+    width: 100vw
+}
+
 .map-sec {
     object-fit: cover;
 }
 
 .map img {
     height: 80vh;
-    width: 100vw
+    width: 50vw
 }
 
 @media (max-width:1200px) {
@@ -1030,7 +1040,17 @@ footer {
         height: 50vh;
         object-fit: cover;
     }
+    .map {
+        height: 50vh;
+    }
     .map img {
+        height: 50vh;
+    }
+    .ourEnd {
+        height: 50vh;
+        object-fit: cover;
+    }
+    .ourEnd img {
         height: 50vw;
     }
     map {
