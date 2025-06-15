@@ -1,10 +1,39 @@
-function toggleMenu() {
-    const navbar = document.querySelector('.navbar');
+// Hamburger menu functionality
+document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
-    navbar.classList.toggle('active');
-    hamburger.classList.toggle('active');
-}
+    const navbar = document.querySelector('.navbar');
 
+    function toggleMenu() {
+        navbar.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Add click event listener to hamburger
+    if (hamburger) {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
+        });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navbar.classList.contains('active') && !hamburger.contains(e.target) && !navbar.contains(e.target)) {
+            toggleMenu();
+        }
+    });
+
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-links1 a, .nav-links2 a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbar.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+});
 
 const counters = document.querySelectorAll('.count');
 const speed = 200; // lower = faster

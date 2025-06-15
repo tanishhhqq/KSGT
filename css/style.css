@@ -4,12 +4,15 @@
     font-family: "Encode Sans Expanded", sans-serif;
     font-weight: 100;
     font-style: normal;
+    box-sizing: border-box;
 }
 
 html,
 body {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .logo {
@@ -39,18 +42,22 @@ body {
 
 .navbar {
     flex-direction: column;
+    z-index: 1001;
 }
 
 .nav-links1 {
-    display: inline;
-    justify-items: center;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    z-index: 1001;
 }
 
 .nav-links1 a {
     text-decoration: none;
     padding: 3vh 0;
-    color: black;
+    color: rgb(39, 39, 39);
+    font-weight: 600;
 }
 
 .nav-links1 a:hover {
@@ -68,30 +75,14 @@ body {
 .nav-1 ul {
     display: flex;
     list-style: none;
-}
-
-.brand-name {
-    padding-right: 10vh;
-    justify-content: center;
-}
-
-.brand-name img {
-    height: 3vh;
-}
-
-.brand-name a {
     text-decoration: none;
-    color: #a70000;
-}
-
-.brand-name a:hover {
-    color: #a70000;
+    color: black;
 }
 
 .nav-links2 a {
     text-decoration: none;
     color: black;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .nav-links2 ul li {
@@ -104,7 +95,7 @@ body {
 
 .nav-2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     height: 10vh;
     position: relative;
@@ -114,10 +105,28 @@ body {
 .nav-2 ul {
     display: flex;
     list-style: none;
+    text-decoration: none;
+    color: black;
+    gap: 8em;
+    font-size: 1em;
 }
 
 .nav-2 li {
     margin-left: 2vw;
+}
+
+@media (max-width: 1480px) {
+    .nav-2 ul {
+        display: flex;
+        list-style: none;
+        text-decoration: none;
+        color: black;
+        gap: 6em;
+        font-size: 1em;
+    }
+    .nav-icon img {
+        height: 5vh;
+    }
 }
 
 .hamburger {
@@ -125,11 +134,12 @@ body {
     flex-direction: column;
     cursor: pointer;
     padding: 10px;
-    z-index: 1001;
+    z-index: 1002;
     position: absolute;
     top: 20px;
     right: 20px;
-    /* Top right */
+    background: transparent;
+    border: none;
 }
 
 .hamburger .bar {
@@ -138,7 +148,58 @@ body {
     background-color: #333;
     margin: 4px 0;
     border-radius: 2px;
-    transition: all 0.3s ease;
+}
+
+@media (max-width: 1250px) {
+    .hamburger {
+        display: flex;
+    }
+    .header {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .logo {
+        padding: 0;
+    }
+    .logo img {
+        height: 8vh;
+    }
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        transition: 0.3s ease-in-out;
+        padding-top: 80px;
+        z-index: 1001;
+    }
+    .navbar.active {
+        right: 0;
+    }
+    .nav-1,
+    .nav-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links1 ul,
+    .nav-links2 ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .nav-links1 a,
+    .nav-links2 a {
+        font-size: 1.2rem;
+    }
+    .CTA {
+        display: none;
+    }
+    /* Hide the hr line in mobile view */
+    .navbar hr {
+        display: none;
+    }
 }
 
 
@@ -148,54 +209,10 @@ body {
     flex-direction: column;
 }
 
-
-/* Responsive */
-
-@media (max-width: 786px) {
-    .hamburger {
-        display: flex;
-        position: fixed;
-        justify-content: center;
-    }
-    .nav-2 {
-        width: 70vw;
-    }
-    .navbar {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 100%;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: right 0.3s ease;
-        z-index: 1000;
-    }
-    .navbar.active {
-        right: 0;
-    }
-    .nav-1 ul,
-    .nav-2 ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-1 li,
-    .nav-2 li {
-        margin: 20px 0;
-    }
-    .nav-2 {
-        flex-direction: column;
-        height: auto;
-    }
-    .brand-name {
-        display: none;
-    }
-    hr {
-        display: none;
-    }
+.CTA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -208,6 +225,7 @@ body {
     height: 90vh;
     overflow: hidden;
     margin: 0 auto;
+    z-index: 1;
 }
 
 .section-1 img {
@@ -220,6 +238,7 @@ body {
     opacity: 0;
     flex-shrink: 0;
     transition: opacity 1s ease-in-out;
+    z-index: 1;
 }
 
 .section-1 img.active {
@@ -490,16 +509,16 @@ button:hover {
 /* Section-specific overlay colors */
 
 #section2::after {
-    background-color: hsl(0, 100%, 33%, 0.8);
+    background-color: hsl(0, 100%, 33%, 0.9);
 }
 
 #section3::after {
-    background-color: rgba(28, 72, 132, 0.7);
+    background-color: rgba(28, 72, 132, 0.9);
     /* Blue overlay */
 }
 
 #section4::after {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.9);
     /* Dark overlay, if needed */
 }
 
@@ -513,13 +532,13 @@ button:hover {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
-    background-color: hsl(218, 100%, 18%, 0.7);
+    background-color: hsl(218, 100%, 18%, 0.9);
     /* 70% opacity blue overlay */
     opacity: 1;
 }
 
 #section4:hover::after {
-    background-color: hsl(218, 100%, 18%, 0.7);
+    background-color: hsl(218, 100%, 18%, 0.9);
     /* 70% opacity blue overlay */
     opacity: 1;
 }
@@ -580,15 +599,12 @@ button:hover {
 
 .sec3-btn {
     display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 
-.sec3-btn a,
-.sec3-btn button {
-    text-decoration: none;
-    color: white;
-    height: 6vh;
-    width: 3vw
+.sec3-info {
+    font-size: 1rem;
+    justify-content: center;
 }
 
 
@@ -945,8 +961,8 @@ footer {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    height: 100px;
+    width: 20vw;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -958,14 +974,14 @@ footer {
 
 .box h3 {
     margin: 0 0 10px 0;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     font-weight: bold;
     color: #333;
 }
 
 .box p {
     margin: 0;
-    font-size: 0.5rem;
+    font-size: 0.9rem;
     color: #666;
     line-height: 1.5;
 }
@@ -1026,70 +1042,11 @@ footer {
     width: 100vw
 }
 
-.map-sec {
-    object-fit: cover;
-}
+@media (max-width:1200px) {}
 
-.map img {
-    height: 80vh;
-    width: 50vw
-}
+@media (max-display:768px) {}
 
-@media (max-width:1200px) {
-    .map-sec {
-        height: 50vh;
-        object-fit: cover;
-    }
-    .map {
-        height: 50vh;
-    }
-    .map img {
-        height: 50vh;
-    }
-    .ourEnd {
-        height: 50vh;
-        object-fit: cover;
-    }
-    .ourEnd img {
-        height: 50vw;
-    }
-    map {
-        height: 50vh;
-    }
-    map img {
-        height: 50vh;
-    }
-}
-
-@media (max-display:768px) {
-    .map-sec {
-        height: 40vh;
-    }
-    .map img {
-        height: 40vh;
-    }
-    map {
-        height: 40vh;
-    }
-    map img {
-        height: 40vh;
-    }
-}
-
-@media (max-display:480px) {
-    .map-sec {
-        height: 30vh;
-    }
-    .map img {
-        height: 30vh;
-    }
-    map {
-        height: 30vh;
-    }
-    map img {
-        height: 30vh;
-    }
-}
+@media (max-display:480px) {}
 
 .carousel-container {
     width: 100%;
@@ -1219,4 +1176,12 @@ footer {
         width: 40px;
         height: 40px;
     }
+}
+
+.map {
+    display: flex;
+}
+
+.map img {
+    height: 40vw;
 }

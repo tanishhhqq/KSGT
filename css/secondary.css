@@ -253,6 +253,7 @@
         justify-content: center;
         align-items: center;
         margin-left: 30vw;
+        font-size: 1.2rem;
     }
     
     .end-users {
@@ -273,28 +274,6 @@
         border-radius: 2px;
         border: none;
         width: 30vw;
-    }
-    
-    .logo-grid-wrapper {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        justify-items: center;
-        align-items: center;
-    }
-    
-    .logo-grid-item {
-        width: 12vw;
-        height: 20vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: white;
-    }
-    
-    .logo-grid-item img {
-        max-width: 80%;
-        max-height: 80%;
-        object-fit: contain;
     }
     
     @media (max-width: 768px) {
@@ -471,4 +450,51 @@
         .service-image {
             max-width: 100%;
         }
+    }
+    
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+    
+    .logos {
+        overflow: hidden;
+        padding: 2vh 0;
+        background: #fff;
+        white-space: nowrap;
+        position: relative;
+    }
+    
+    .logos:before,
+    .logos:after {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        content: "";
+        z-index: 2;
+    }
+    
+    .logos:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+    }
+    
+    .logos:after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+    }
+    
+    .logos-slide {
+        display: inline-block;
+        animation: 10s slide infinite linear;
+    }
+    
+    .logos-slide img {
+        width: 8vw;
+        height: 15vh;
+        margin: 0 2vw;
     }
