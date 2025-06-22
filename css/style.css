@@ -196,6 +196,9 @@ body {
     .CTA {
         display: none;
     }
+    .tooltip {
+        display: none;
+    }
     /* Hide the hr line in mobile view */
     .navbar hr {
         display: none;
@@ -305,7 +308,7 @@ button:hover {
 }
 
 .subinfo-1 h1 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: clamp(1.5rem, 3vw, 2rem);
     /* Responsive heading */
     padding-top: 1rem;
@@ -321,7 +324,7 @@ button:hover {
 }
 
 .subinfo-2 h1 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: clamp(1.5rem, 3vw, 2rem);
     /* Responsive heading */
     padding-top: 1rem;
@@ -407,17 +410,104 @@ button:hover {
     padding: 2vh;
     flex-direction: row;
     justify-content: center;
-    gap: 2vw;
+    align-items: center;
+    gap: 4vw;
+    min-height: 60vh;
+}
+
+.sec2-image-left,
+.sec2-image-right {
+    flex: 0 1 auto;
+    max-width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec2-image-left img,
+.sec2-image-right img {
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sec2-content {
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
 }
 
 .sec2-title {
-    width: 40%;
+    width: 100%;
 }
+
+.sec2-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1c4884;
+}
+
+.sec2-title p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+/* Animation classes */
+
+.animate-from-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-from-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+/* Scroll-triggered animation classes */
+
+.animate-from-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-from-right.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Remove the keyframe animations since we're using transitions now */
 
 .sec-image img {
     height: 70vh;
     width: 35vw;
     object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    .sec2-image-left,
+    .sec2-image-right {
+        flex: 0 1 auto;
+        max-width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sec2-image-left img,
+    .sec2-image-right img {
+        height: 30vw;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
 }
 
 
@@ -428,14 +518,32 @@ button:hover {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 3vh;
+        min-height: auto;
+    }
+    .sec2-image-left,
+    .sec2-image-right {
+        max-width: 90vw;
+        order: 1;
+    }
+    .sec2-image-left img,
+    .sec2-image-right img {
+        height: 30vh;
+        width: 90vw;
+    }
+    .sec2-content {
+        max-width: 90vw;
+        order: 2;
     }
     .sec2-title {
         width: 90vw;
         margin-bottom: 2vh;
     }
-    .sec-image img {
-        width: 90vw;
-        height: auto;
+    .sec2-title h2 {
+        font-size: 1.8rem;
+    }
+    .sec2-title p {
+        font-size: 1rem;
     }
 }
 
@@ -1033,6 +1141,27 @@ footer {
     }
 }
 
+@media (max-width: 320px) {
+    .box h3 {
+        margin: 0 0 10px 0;
+        font-size: 0.2rem;
+        font-weight: bold;
+        color: #333;
+    }
+    .box p {
+        margin: 0;
+        font-size: 0.2rem;
+        color: #666;
+        line-height: 1.5;
+    }
+    .email-image {
+        display: none;
+    }
+    .phone-image {
+        display: none;
+    }
+}
+
 .ourEnd {
     object-fit: cover;
 }
@@ -1043,10 +1172,6 @@ footer {
 }
 
 @media (max-width:1200px) {}
-
-@media (max-display:768px) {}
-
-@media (max-display:480px) {}
 
 .carousel-container {
     width: 100%;
@@ -1184,4 +1309,164 @@ footer {
 
 .map img {
     height: 40vw;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: scroll 100s linear infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    color: #d31515;
+    font-family: Arial, sans-serif;
+    font-size: 4em;
+}
+
+.marquee-content h3 {
+    font-weight: 800;
+    color: white;
+    border: #A70000;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #A70000;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.last-img img {
+    height: 30vw;
+    width: 100%;
+}
+
+
+/* SECTION 6: Authorised Channel Partner */
+
+.section-6 {
+    display: flex;
+    height: 45vh;
+}
+
+.section-6-left {
+    display: flex;
+    background-color: pink;
+    padding: 1em;
+    width: 50vw;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.section-6-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.section-6-text p {
+    font-weight: 600;
+}
+
+.section-6-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.section-6-end {
+    background-color: pink;
+    width: 20vw;
+    color: pink;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.director {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.director-message-container {
+    width: 60vw;
+    padding: 1em;
+    text-align: center;
+}
+
+.director-signature {
+    color: #a70000;
+    font-weight: 500;
+}
+
+.ribbon-left img {
+    width: 20vw;
+}
+
+.ribbon-right img {
+    width: 20vw;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row1 img {
+    height: 40vh;
+}
+
+.row2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row2 img {
+    height: 40vh;
+}
+
+@media (max-width:1000px) {
+    .row1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .row1 img {
+        height: 20vh;
+    }
+    .row2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .row2 img {
+        height: 20vh;
+    }
+    .ribbon-left {
+        display: none;
+    }
+    .ribbon-right {
+        display: none;
+    }
+    .director-message-container {
+        width: 80vw;
+        padding: 1em;
+        text-align: center;
+    }
 }

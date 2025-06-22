@@ -132,3 +132,29 @@ showSlide(current);
 
 // Change slide every 3 seconds
 setInterval(nextSlide, 3000);
+
+// Scroll-triggered animations for section-2
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.3, // Trigger when 30% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly before the element comes into view
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add animation class to trigger the animation
+                entry.target.classList.add('animate-in');
+                
+                // Optional: Unobserve after animation to prevent re-triggering
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe the animated elements
+    const animatedElements = document.querySelectorAll('.animate-from-left, .animate-from-right');
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+});
