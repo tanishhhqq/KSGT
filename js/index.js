@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 // Add animation class to trigger the animation
                 entry.target.classList.add('animate-in');
-                
+
                 // Optional: Unobserve after animation to prevent re-triggering
                 // observer.unobserve(entry.target);
             }
@@ -156,5 +156,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.animate-from-left, .animate-from-right');
     animatedElements.forEach(element => {
         observer.observe(element);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopBtn.style.display = "flex";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    };
+
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
