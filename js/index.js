@@ -1,37 +1,42 @@
 // Hamburger menu functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.querySelector('.navbar');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navContainer = document.querySelector('.nav-container');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    function toggleMenu() {
-        navbar.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : '';
-    }
+    // Toggle hamburger menu
+    hamburgerMenu.addEventListener('click', function() {
+        hamburgerMenu.classList.toggle('active');
+        navContainer.classList.toggle('active');
+    });
 
-    // Add click event listener to hamburger
-    if (hamburger) {
-        hamburger.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu();
+    // Handle dropdowns in mobile view
+    dropdowns.forEach(dropdown => {
+        const dropdownLink = dropdown.querySelector('.nav-link');
+
+        dropdownLink.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
         });
-    }
+    });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (navbar.classList.contains('active') && !hamburger.contains(e.target) && !navbar.contains(e.target)) {
-            toggleMenu();
+        if (!hamburgerMenu.contains(e.target) && !navContainer.contains(e.target)) {
+            hamburgerMenu.classList.remove('active');
+            navContainer.classList.remove('active');
         }
     });
 
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-links1 a, .nav-links2 a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navbar.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
+    // Close menu when window is resized above 900px
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 900) {
+            hamburgerMenu.classList.remove('active');
+            navContainer.classList.remove('active');
+            dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+        }
     });
 });
 
@@ -159,21 +164,79 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
+document.addEventListener('DOMContentLoaded', function() {
+    // Dropdown for GROUP COMPANIES
+    const groupCompaniesDropdown = document.querySelector('.navbar-links .dropdown:nth-child(4)');
+    const groupCompaniesMenu = groupCompaniesDropdown ? groupCompaniesDropdown.querySelector('ul') : null;
 
-    window.onscroll = function() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            scrollTopBtn.style.display = "flex";
-        } else {
-            scrollTopBtn.style.display = "none";
-        }
-    };
-
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    // Only proceed if the dropdown exists
+    if (groupCompaniesDropdown && groupCompaniesMenu) {
+        // Desktop: show on hover (handled by CSS)
+        // Mobile: toggle on click
+        groupCompaniesDropdown.addEventListener('click', function(e) {
+            // Only toggle on mobile
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                // Close any other open dropdowns
+                document.querySelectorAll('.navbar-links .dropdown ul').forEach(function(ul) {
+                    if (ul !== groupCompaniesMenu) ul.style.display = 'none';
+                });
+                // Toggle this dropdown
+                if (groupCompaniesMenu.style.display === 'block') {
+                    groupCompaniesMenu.style.display = 'none';
+                } else {
+                    groupCompaniesMenu.style.display = 'block';
+                }
+            }
         });
+        // Close dropdown on outside click (mobile)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900) {
+                if (!groupCompaniesDropdown.contains(e.target)) {
+                    groupCompaniesMenu.style.display = 'none';
+                }
+            }
+        });
+        // On resize, reset dropdown display
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 900) {
+                groupCompaniesMenu.style.display = '';
+            } else {
+                groupCompaniesMenu.style.display = 'none';
+            }
+        });
+    }
+});
+
+// Get the button
+const backToTopButton = document.getElementById('backToTop');
+
+// Show/hide button based on scroll position
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Show button after scrolling 300px
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+// Smooth scroll to top when button is clicked
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for 'Intro' link to .section-3
+    var introLink = document.querySelector('.dropdown-menu a[href="#section-3"]');
+    var section3 = document.querySelector('.section-3');
+    if (introLink && section3) {
+        introLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            section3.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+    // Let the 'Director's Message' link use default anchor scroll
 });
