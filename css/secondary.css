@@ -499,6 +499,20 @@
                 margin: 0 2vw;
             }
             
+            @media(max-width:600px) {
+                .logos-slide img {
+                    width: 80px;
+                    height: 80px;
+                    margin: 0 2vw;
+                }
+                .logos {
+                    overflow: hidden;
+                    background: #fff;
+                    white-space: nowrap;
+                    position: relative;
+                }
+            }
+            
             .tech {
                 background-image: url(/assets/tech-back.svg);
                 position: relative;
@@ -784,4 +798,23 @@
             .testimonial-slide {
                 min-height: 80px;
                 position: relative;
+            }
+            
+            .director-message {
+                font-weight: 400;
+                margin: 0 30vw;
+                text-align: justify;
+            }
+            
+            @media (max-width: 600px) {
+                .director-message {
+                    margin: 0 10vw;
+                    text-align: justify;
+                }
+                .director-message p {
+                    font-weight: 500;
+                }
+                .director-message h4 {
+                    font-weight: 700;
+                }
             }

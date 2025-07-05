@@ -1299,6 +1299,21 @@ footer {
     border-bottom-left-radius: 20px;
 }
 
+@media (max-width:600px) {
+    .section-6-text {
+        text-align: center;
+        width: 100%;
+    }
+    .section-6-right {
+        display: flex;
+        flex-direction: column;
+    }
+    .section-6-right img {
+        height: 150px;
+        width: 150px;
+    }
+}
+
 .director {
     display: flex;
     justify-content: center;
