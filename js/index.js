@@ -227,16 +227,24 @@ backToTopButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scroll for 'Intro' link to .section-3
-    var introLink = document.querySelector('.dropdown-menu a[href="#section-3"]');
-    var section3 = document.querySelector('.section-3');
-    if (introLink && section3) {
-        introLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            section3.scrollIntoView({ behavior: 'smooth' });
+    const testimonials = document.querySelectorAll('.testimonials-section.simple .testimonial-text');
+    let current = 0;
+
+    function showTestimonial(idx) {
+        testimonials.forEach((t, i) => {
+            if (i === idx) {
+                t.classList.add('active');
+            } else {
+                t.classList.remove('active');
+            }
         });
     }
-    // Let the 'Director's Message' link use default anchor scroll
+
+    function nextTestimonial() {
+        showTestimonial((current + 1) % testimonials.length);
+        current = (current + 1) % testimonials.length;
+    }
+    showTestimonial(0);
+    setInterval(nextTestimonial, 5000);
 });
