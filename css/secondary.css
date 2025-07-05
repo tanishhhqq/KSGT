@@ -867,3 +867,16 @@
                     padding: 10px 0;
                 }
             }
+            
+            .nav-item-1 {
+                display: none;
+            }
+            
+            @media (max-width:900px) {
+                .nav-item-1 {
+                    display: block;
+                }
+                .nav-item {
+                    text-align: left;
+                }
+            }
