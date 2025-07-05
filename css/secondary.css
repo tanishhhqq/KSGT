@@ -583,7 +583,7 @@
             }
             
             .dm {
-                background-image: url(/assets/dm.svg);
+                background-image: url(/assets/direct.svg);
                 position: relative;
                 height: 30vh;
                 /* Full viewport height */
