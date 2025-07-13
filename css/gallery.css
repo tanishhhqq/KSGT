@@ -1,11 +1,12 @@
 /* Gallery Carousel Styles */
 
 .gallery-container {
-    max-width: 50vw;
     width: 100%;
+    max-width: 1200px;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .gallery-carousel {
@@ -16,7 +17,7 @@
 .gallery-slide {
     min-width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -36,8 +37,8 @@
 }
 
 .gallery-card img {
-    height: 50vh;
-    width: 100vw;
+    height: 300px;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -63,22 +64,84 @@
     right: 10px;
 }
 
-
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .gallery-container {
+        padding: 0 15px;
+    }
+    
+    .gallery-slide {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    
+    .gallery-card img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .gallery-container {
+        padding: 0 15px;
+        max-width: 600px;
+    }
+    
+    .gallery-slide {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .gallery-card {
+        width: 100%;
+    }
+    
+    .gallery-card img {
+        height: 300px;
+    }
+}
 
 @media (max-width: 768px) {
+    .gallery-container {
+        padding: 0 12px;
+    }
+    
     .gallery-slide {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .gallery-card img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-container {
+        padding: 0 10px;
+    }
+    
+    .gallery-slide {
+        gap: 10px;
+    }
+    
+    .gallery-card img {
+        height: 200px;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery-slide {
-        grid-template-columns: 1fr;
+    .gallery-container {
+        padding: 0 8px;
     }
+    
+    .gallery-slide {
+        gap: 8px;
+    }
+    
     .gallery-card img {
         height: 150px;
     }
+    
     .gallery-nav-button {
         font-size: 1rem;
         padding: 8px;
